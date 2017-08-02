@@ -14,10 +14,19 @@ function handValue (hand) {
 for (var i = 0; i < hand.length; i++) {
   let card = hand[i];
   if (card === 'K' || card === 'Q' || card === 'J')
-  {
-  handtotal += 10}
-  else {
-    handtotal += parseInt(card,10)
+  { handtotal += 10
+  }
+  else if (card != 'A'){
+    handtotal += parseInt(card,10);
+  }
+}
+for (var i = 0; i < hand.length; i++) {
+  if(hand[i] === 'A'){
+
+    if(handtotal > 10)
+    handtotal += 1
+    else
+    handtotal += 11;
   }
 }
   return handtotal;
